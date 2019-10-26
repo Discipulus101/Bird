@@ -20,11 +20,11 @@ console.log("Ход битвы на арене по раундам.");
 console.log("__________________________________________________________________________________________________");
 let words = ["Победу одержала птица: '", "' с силой равной: '", "'  над птицей: '", "' с силой равной: '"]; // Фразы ведущего
 
-let arena = birdcage.filter(item => item.wasEaten === false); // Птичья арена
-while (arena.length > 1) {
-    function getRandomInRange(min, max) { // функция для выбора случайного участника битвы
+function getRandomInRange(min, max) { // функция для выбора случайного участника битвы
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+let arena = birdcage.filter(item => item.wasEaten === false); // Птичья арена
+while (arena.length > 1) {
     let x = getRandomInRange(0, arena.length-1); // выбор для битвы случайного участника №1
     let y = getRandomInRange(0, arena.length-1); // выбор для битвы случайного участника №2
     if (x != y) {
